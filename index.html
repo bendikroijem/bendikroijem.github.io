@@ -70,12 +70,12 @@
             <article><div class="grade">C</div><h3>Mikroøkonomi med anvendelser</h3></article>
             <article><div class="grade">C</div><h3>Finansiering og investering</h3></article>
             <article><div class="grade">D</div><h3>Etikk, samfunnsansvar og bærekraft</h3></article>
-            <article><div class="grade">C</div><h3>Strategisk økonomistyring</h3></article>
-            <article><div class="grade">D</div><h3>Finansteori</h3></article>
-            <article><div class="grade">C</div><h3>Næringsøkonomi og konkurranseanalyse</h3></article>
-            <article><div class="grade">A</div><h3>International Economics</h3></article>
-            <article><div class="grade grade-b">B</div><h3>International Finance</h3></article>
-            <article><div class="grade grade-b">B</div><h3>Dataanalyse og programmering for økonomer</h3></article>
+            <article class="specialization"><div class="grade">C</div><h3>Strategisk økonomistyring</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade">D</div><h3>Finansteori</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade">C</div><h3>Næringsøkonomi og konkurranseanalyse</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade">A</div><h3>International Economics</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade grade-b">B</div><h3>International Finance</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade grade-b">B</div><h3>Dataanalyse og programmering for økonomer</h3><span>ØKONOMISK ANALYSE</span></article>
           </div>
         </div>
       </section>
@@ -83,19 +83,23 @@
       <section class="portfolio section-wrap" id="portefolje">
         <div class="portfolio-heading">
           <div><p class="section-index">03 / FONDSPORTEFØLJE</p><h2>Langsiktig<br />kapital i arbeid.</h2></div>
-          <div class="portfolio-note"><span class="status-dot"></span><strong>Prosentvis oversikt</strong><p>Fordelingen er beregnet fra siste oppgitte porteføljeverdi. Eksakte kronebeløp er bevisst ikke publisert.</p></div>
+          <div class="portfolio-note"><span class="status-dot"></span><strong>Interaktiv oversikt</strong><p>Bytt mellom prosentvis fordeling og oppgitt avkastning. Eksakte kronebeløp er bevisst ikke publisert.</p></div>
+        </div>
+        <div class="portfolio-controls" aria-label="Velg porteføljevisning">
+          <button class="portfolio-toggle active" type="button" data-view="allocation" aria-pressed="true">Fordeling</button>
+          <button class="portfolio-toggle" type="button" data-view="return" aria-pressed="false">Avkastning</button>
         </div>
         <div class="portfolio-dashboard">
           <div class="allocation-chart" role="img" aria-label="DNB Spare 100 A 46,2 prosent, DNB Teknologi A 31,3 prosent og DNB Global Indeks A 22,5 prosent">
-            <div class="donut"><span><strong>3</strong> fond</span></div>
+            <div class="donut"><span><strong id="portfolio-total">3</strong><span id="portfolio-total-label">fond</span></span></div>
           </div>
           <div class="fund-list">
-            <article><span class="fund-dot fund-one"></span><div><h3>DNB Spare 100 A</h3><p>Bred fondsplassering</p></div><strong>46,2 %</strong></article>
-            <article><span class="fund-dot fund-two"></span><div><h3>DNB Teknologi A</h3><p>Teknologisektoren</p></div><strong>31,3 %</strong></article>
-            <article><span class="fund-dot fund-three"></span><div><h3>DNB Global Indeks A</h3><p>Global indeks</p></div><strong>22,5 %</strong></article>
+            <article data-allocation="46,2 %" data-return="+17,94 %"><span class="fund-dot fund-one"></span><div><h3>DNB Spare 100 A</h3><p>Bred fondsplassering</p></div><strong class="fund-value">46,2 %</strong></article>
+            <article data-allocation="31,3 %" data-return="+45,54 %"><span class="fund-dot fund-two"></span><div><h3>DNB Teknologi A</h3><p>Teknologisektoren</p></div><strong class="fund-value">31,3 %</strong></article>
+            <article data-allocation="22,5 %" data-return="+12,48 %"><span class="fund-dot fund-three"></span><div><h3>DNB Global Indeks A</h3><p>Global indeks</p></div><strong class="fund-value">22,5 %</strong></article>
           </div>
         </div>
-        <div class="portfolio-disclaimer"><span>SISTE OPPGITTE FORDELING</span><p>Fondssammensetning og markedsverdier endres over tid. Oversikten er informasjon om min egen portefølje, ikke investeringsråd.</p></div>
+        <div class="portfolio-disclaimer"><span>SISTE OPPGITTE TALL</span><p>Samlet oppgitt avkastning er 23,93 %. Fondssammensetning og markedsverdier endres over tid. Oversikten er informasjon om min egen portefølje, ikke investeringsråd.</p></div>
       </section>
 
       <section class="projects section-wrap" id="profil">
@@ -111,7 +115,7 @@
         <div><p class="section-index">05 / CV</p><h2>Utdanning og erfaring.</h2></div>
         <div class="timeline">
           <article><time>PÅGÅENDE</time><div><h3>Master i økonomi og administrasjon</h3><p>Spesialisering i finans · Universitetet i Agder</p></div><span>UTDANNING</span></article>
-          <article><time>FULLFØRT</time><div><h3>Bachelor i økonomi og administrasjon</h3><p>Universitetet i Agder</p></div><span>UTDANNING</span></article>
+          <article><time>FULLFØRT</time><div><h3>Bachelor i økonomi og administrasjon</h3><p>Høgskolen i Østfold</p></div><span>UTDANNING</span></article>
           <article><time>2021 — 2026</time><div><h3>Maskinoperatør / sommerarbeider</h3><p>VPK Packaging · Produksjon, maskinbetjening, kvalitetskontroll, HMS og samarbeid</p></div><span>ERFARING</span></article>
           <article><time>2021</time><div><h3>Sommerjobb</h3><p>Borregaard</p></div><span>ERFARING</span></article>
         </div>
