@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <header class="site-header">
@@ -77,14 +77,14 @@
             <article><div class="grade">D</div><h3>Etikk, samfunnsansvar og bærekraft</h3></article>
           </div>
           <div class="specialization-block">
-            <div class="specialization-header"><span>SISTE STUDIEÅR</span><h3>Spesialisering i økonomisk analyse</h3><p>Seks emner med fordypning i finans, strategi, markeder og kvantitativ analyse.</p></div>
+            <div class="specialization-header"><span>FORDYPNING</span><h3>Økonomisk analyse</h3><p>Seks emner med fordypning i finans, strategi, markeder og kvantitativ analyse.</p></div>
             <div class="grade-grid specialization-grid">
-            <article class="specialization"><div class="grade">C</div><h3>Strategisk økonomistyring</h3><span>ØKONOMISK ANALYSE</span></article>
-            <article class="specialization"><div class="grade">D</div><h3>Finansteori</h3><span>ØKONOMISK ANALYSE</span></article>
-            <article class="specialization"><div class="grade">C</div><h3>Næringsøkonomi og konkurranseanalyse</h3><span>ØKONOMISK ANALYSE</span></article>
-            <article class="specialization"><div class="grade">A</div><h3>International Economics</h3><span>ØKONOMISK ANALYSE</span></article>
-            <article class="specialization"><div class="grade grade-b">B</div><h3>International Finance</h3><span>ØKONOMISK ANALYSE</span></article>
-            <article class="specialization"><div class="grade grade-b">B</div><h3>Dataanalyse og programmering for økonomer</h3><span>ØKONOMISK ANALYSE</span></article>
+            <article class="specialization"><div class="grade">C</div><h3>Strategisk økonomistyring</h3></article>
+            <article class="specialization"><div class="grade">D</div><h3>Finansteori</h3></article>
+            <article class="specialization"><div class="grade">C</div><h3>Næringsøkonomi og konkurranseanalyse</h3></article>
+            <article class="specialization"><div class="grade">A</div><h3>International Economics</h3></article>
+            <article class="specialization"><div class="grade grade-b">B</div><h3>International Finance</h3></article>
+            <article class="specialization"><div class="grade grade-b">B</div><h3>Dataanalyse og programmering for økonomer</h3></article>
             </div>
           </div>
         </div>
@@ -101,7 +101,15 @@
         </div>
         <div class="portfolio-dashboard">
           <div class="allocation-chart" role="img" aria-label="DNB Spare 100 A 46,2 prosent, DNB Teknologi A 31,3 prosent og DNB Global Indeks A 22,5 prosent">
-            <div class="donut"><span><strong id="portfolio-total">3</strong><span id="portfolio-total-label">fond</span></span></div>
+            <div class="donut">
+              <svg class="donut-rings" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="donut-track" cx="60" cy="60" r="48" pathLength="100"></circle>
+                <circle class="donut-segment segment-one" cx="60" cy="60" r="48" pathLength="100"></circle>
+                <circle class="donut-segment segment-two" cx="60" cy="60" r="48" pathLength="100"></circle>
+                <circle class="donut-segment segment-three" cx="60" cy="60" r="48" pathLength="100"></circle>
+              </svg>
+              <span><strong id="portfolio-total">3</strong><span id="portfolio-total-label">fond</span></span>
+            </div>
           </div>
           <div class="fund-list">
             <article data-allocation="46,2 %" data-return="+17,94 %"><span class="fund-dot fund-one"></span><div><h3>DNB Spare 100 A</h3><p>Bred fondsplassering</p></div><strong class="fund-value">46,2 %</strong></article>
@@ -133,6 +141,6 @@
     </main>
 
     <footer><div><p class="section-index">TA GJERNE KONTAKT</p><h2>La oss snakke.<br /><a href="mailto:bendikroijem@gmail.com">Send e-post.</a></h2></div><div class="footer-bottom"><span>© 2026 BENDIK STRØMME RØIJEM</span><a href="https://www.linkedin.com/in/bendik-r%C3%B8ijem-2b468a253/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><button id="to-top" aria-label="Til toppen">↑</button></div></footer>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>
