@@ -10,11 +10,11 @@
 @media(max-width:800px){.hero-stats{grid-template-columns:1fr;margin-top:36px}.specialization-header{grid-template-columns:1fr;gap:10px}.portfolio-dashboard{box-shadow:7px 7px 0 #d9ff56}.portfolio-controls{margin-left:0}.grade-grid article.specialization>span{margin-top:0}}
 
 /* Dark finance terminal treatment */
-:root{--ink:#e8eee9;--paper:#09110d;--acid:#cfff47;--green:#1f6a4c;--blue:#3f519c;--line:rgba(232,238,233,.14)}
+:root{--ink:#e8eee9;--paper:#09110d;--acid:#c8d9a0;--green:#477c68;--blue:#6573a7;--line:rgba(232,238,233,.14)}
 body{background:var(--paper);color:var(--ink)}
 .site-header{background:rgba(9,17,13,.78);backdrop-filter:blur(16px);position:fixed}.brand span,.ticker b,footer h2 a{color:var(--acid)}
 .button{background:var(--acid);color:#09110d}.text-link{color:#dce5df}.hero:before{background-image:linear-gradient(rgba(207,255,71,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(207,255,71,.045) 1px,transparent 1px)}
-.hero-art{background:radial-gradient(circle at 30% 25%,#dfff79 0,var(--acid) 30%,#77a516 100%);box-shadow:20px 20px 0 #14231b}.hero-art:after{content:"MARKET / 26";position:absolute;right:-27px;bottom:72px;transform:rotate(-90deg);font:500 9px 'DM Mono';letter-spacing:.18em}
+.hero-art{background:radial-gradient(circle at 30% 25%,#e0e8c8 0,#b8cb91 42%,#768f65 100%);box-shadow:20px 20px 0 #14231b}.hero-art:after{content:"MARKET / 26";position:absolute;right:-27px;bottom:72px;transform:rotate(-90deg);font:500 9px 'DM Mono';letter-spacing:.18em}
 .orbit{border-color:rgba(9,17,13,.45)}.intro,.about-copy>p{color:#b9c5bd}.facts span,.timeline p{color:#89968e}.facts strong{color:var(--ink)}
 .hero-stats{background:var(--line);border-color:var(--line)}.hero-stats span{background:#0d1812;color:#849188}.hero-stats strong{color:var(--acid)}
 .about{background:linear-gradient(180deg,#09110d,#0d1812)}
@@ -28,14 +28,19 @@ body{background:var(--paper);color:var(--ink)}
 footer{background:#050906;border-top:1px solid rgba(207,255,71,.35)}
 .portfolio-controls{background:#172a1f}.portfolio-toggle{color:#ced8d1}.ticker{background:var(--acid);color:#09110d}.ticker b{color:#31500b}
 
-/* The allocation ring draws itself when it enters the viewport. */
-.donut{--ring:0deg;background:conic-gradient(var(--green) 0 min(var(--ring),166.32deg),var(--blue) 0 min(var(--ring),279deg),#9bad62 0 var(--ring),rgba(255,255,255,.08) 0);transform:rotate(-110deg) scale(.92);opacity:.35;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .3s}
-.donut>span{transform:rotate(110deg)}
-.chart-visible .donut{animation:buildPortfolio 1.35s cubic-bezier(.25,.8,.25,1) forwards}
-.chart-pulse .donut{animation:portfolioPulse .5s ease}
-.allocation-chart.showing-return .donut{background:var(--acid)}
-@property --ring{syntax:"<angle>";inherits:false;initial-value:0deg}
-@keyframes buildPortfolio{0%{--ring:0deg;transform:rotate(-110deg) scale(.92);opacity:.35}100%{--ring:360deg;transform:rotate(0) scale(1);opacity:1}}
-@keyframes portfolioPulse{50%{transform:scale(.96)}100%{transform:scale(1)}}
+/* SVG strokes make the allocation reveal reliable in every modern browser. */
+.donut{position:relative;background:none;display:grid;place-items:center;transform:scale(.94);opacity:0;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.donut:before{display:none}.donut-rings{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}.donut-rings circle{fill:none;stroke-width:14}.donut-track{stroke:rgba(255,255,255,.07)}
+.donut-segment{stroke-linecap:butt;stroke-dashoffset:100;transition:stroke-dashoffset 1.15s cubic-bezier(.65,0,.2,1)}.segment-one{stroke:var(--green);stroke-dasharray:46.2 53.8}.segment-two{stroke:var(--blue);stroke-dasharray:31.3 68.7;transform:rotate(166.32deg);transform-origin:center}.segment-three{stroke:#a7ae7d;stroke-dasharray:22.5 77.5;transform:rotate(279deg);transform-origin:center}
+.chart-visible .donut{transform:scale(1);opacity:1}.chart-visible .donut-segment{stroke-dashoffset:0}.chart-visible .segment-two{transition-delay:.18s}.chart-visible .segment-three{transition-delay:.32s}
+.chart-pulse .donut{animation:portfolioPulse .55s ease}.allocation-chart.showing-return .donut-segment{stroke:var(--acid);opacity:.88}.allocation-chart.showing-return .segment-two{opacity:.62}.allocation-chart.showing-return .segment-three{opacity:.38}
+@keyframes portfolioPulse{50%{transform:scale(.965)}100%{transform:scale(1)}}
 @media(max-width:800px){.site-header{height:72px}.specialization-block{margin-top:65px}.hero-art{box-shadow:10px 10px 0 #14231b}}
-@media(prefers-reduced-motion:reduce){.chart-visible .donut,.chart-pulse .donut{animation:none;--ring:360deg;transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.chart-visible .donut,.chart-pulse .donut{animation:none;transform:none;opacity:1}.donut-segment{transition:none;stroke-dashoffset:0}}
+
+/* Calm, editorial motion: content rises in and rows follow the chart. */
+.motion-ready{opacity:0;transform:translateY(34px);transition:opacity .75s ease var(--reveal-delay,0ms),transform .9s cubic-bezier(.2,.75,.2,1) var(--reveal-delay,0ms)}.motion-ready.motion-visible{opacity:1;transform:none}
+.chart-visible+.fund-list article{animation:fundRowIn .65s both}.chart-visible+.fund-list article:nth-child(2){animation-delay:.1s}.chart-visible+.fund-list article:nth-child(3){animation-delay:.2s}
+.button,.portfolio-toggle{transition:transform .25s ease,background-color .25s ease,box-shadow .25s ease}.project-card{transition:opacity .75s ease var(--reveal-delay,0ms),transform .9s cubic-bezier(.2,.75,.2,1) var(--reveal-delay,0ms),background-color .25s ease,box-shadow .25s ease}.button:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2)}.portfolio-toggle:hover:not(.active){background:rgba(255,255,255,.06)}.project-card:hover{transform:translateY(-6px);box-shadow:14px 16px 0 rgba(0,0,0,.16)}
+@keyframes fundRowIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.motion-ready{opacity:1;transform:none;transition:none}.chart-visible+.fund-list article{animation:none}.button,.portfolio-toggle,.project-card{transition:none}}
