@@ -1,4 +1,4 @@
-# Nora Eide — personlig portefølje
+# Bendik Strømme Røijem — personlig portefølje
 
 En responsiv, norskspråklig porteføljeside for presentasjon av akademiske
 resultater, prosjekter og CV.
