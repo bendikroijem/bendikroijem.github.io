@@ -1,0 +1,11 @@
+{
+  "name": "nora-eide-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personlig portefølje for akademiske resultater, CV og prosjekter",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check script.js"
+  }
+}
