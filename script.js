@@ -21,7 +21,7 @@ const portfolioObserver = new IntersectionObserver(
 
 portfolioObserver.observe(allocationChart);
 
-document.querySelectorAll('.about, .results, .portfolio-heading, .project-card, .cv').forEach((element, index) => {
+document.querySelectorAll('.about, .experience, .education, .project-card, .skills, .portfolio-heading').forEach((element, index) => {
   element.classList.add('motion-ready');
   element.style.setProperty('--reveal-delay', `${Math.min(index * 70, 210)}ms`);
 });
@@ -58,8 +58,8 @@ portfolioToggles.forEach((toggle) => {
     });
 
     const showingReturn = view === 'return';
-    portfolioTotal.textContent = showingReturn ? '+23,94 %' : '3';
-    portfolioTotalLabel.textContent = showingReturn ? 'avkastning siden kjøp' : 'fond';
+    portfolioTotal.textContent = showingReturn ? '+23.94%' : '3';
+    portfolioTotalLabel.textContent = showingReturn ? 'return since purchase' : 'funds';
     allocationChart.classList.toggle('showing-return', showingReturn);
     allocationChart.classList.remove('chart-pulse');
     requestAnimationFrame(() => allocationChart.classList.add('chart-pulse'));
