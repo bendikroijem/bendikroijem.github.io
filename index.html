@@ -93,7 +93,7 @@
       <section class="portfolio section-wrap" id="portefolje">
         <div class="portfolio-heading">
           <div><p class="section-index">03 / FONDSPORTEFØLJE</p><h2>Langsiktig<br />kapital i arbeid.</h2></div>
-          <div class="portfolio-note"><span class="status-dot"></span><strong>Interaktiv oversikt</strong><p>Bytt mellom prosentvis fordeling og oppgitt avkastning. Eksakte kronebeløp er bevisst ikke publisert.</p></div>
+          <div class="portfolio-note"><span class="status-dot"></span><strong>Oppdatert oktober 2026</strong><p>Bytt mellom prosentvis fordeling og avkastning siden kjøp. Eksakte kronebeløp er bevisst ikke publisert.</p></div>
         </div>
         <div class="portfolio-controls" aria-label="Velg porteføljevisning">
           <button class="portfolio-toggle active" type="button" data-view="allocation" aria-pressed="true">Fordeling</button>
@@ -117,7 +117,7 @@
             <article data-allocation="22,5 %" data-return="+12,48 %"><a class="fund-link" href="https://www.dnb.no/segp/apps/nbp/sds-funds/funds/details/NO0010582984?view=holdings" aria-label="Se DNB Global Indeks A hos DNB"><span class="fund-dot fund-three"></span><div><h3>DNB Global Indeks A</h3><p>Global indeks</p><span class="fund-cta">SE FONDET HOS DNB ↗</span></div><strong class="fund-value">22,5 %</strong></a></article>
           </div>
         </div>
-        <div class="portfolio-disclaimer"><span>SISTE OPPGITTE TALL</span><p>Samlet oppgitt avkastning er 23,93 %. Fondssammensetning og markedsverdier endres over tid. Oversikten er informasjon om min egen portefølje, ikke investeringsråd.</p></div>
+        <div class="portfolio-disclaimer"><span>OPPDATERT OKTOBER 2026</span><p>Beregnet samlet avkastning siden kjøp er 23,94 %, basert på fondenes oppgitte avkastning og nåværende porteføljevekter. Fondssammensetning og markedsverdier endres over tid. Oversikten er ikke investeringsråd.</p></div>
       </section>
 
       <section class="projects section-wrap" id="profil">
@@ -138,9 +138,36 @@
           <article><a class="timeline-link" href="https://www.borregaard.com/" target="_blank" rel="noreferrer"><time>2021</time><div><h3>Sommerjobb</h3><p>Borregaard</p></div><span>ERFARING <b aria-hidden="true">↗</b></span></a></article>
         </div>
       </section>
+
+      <section class="market-strip" aria-label="Markedsoversikt">
+        <div class="market-strip-heading section-wrap"><span>MARKEDSOVERSIKT</span><p>Store amerikanske selskaper · løpende markedsdata</p></div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+            "symbols": [
+              { "proName": "NASDAQ:AAPL", "title": "Apple" },
+              { "proName": "NASDAQ:MSFT", "title": "Microsoft" },
+              { "proName": "NASDAQ:NVDA", "title": "Nvidia" },
+              { "proName": "NASDAQ:AMZN", "title": "Amazon" },
+              { "proName": "NASDAQ:GOOGL", "title": "Alphabet" },
+              { "proName": "NASDAQ:META", "title": "Meta" },
+              { "proName": "NYSE:BRK.B", "title": "Berkshire Hathaway" },
+              { "proName": "NYSE:JPM", "title": "JPMorgan" }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "colorTheme": "dark",
+            "locale": "en"
+          }
+          </script>
+          <noscript>Markedsoversikten krever JavaScript.</noscript>
+        </div>
+      </section>
     </main>
 
     <footer><div><p class="section-index">TA GJERNE KONTAKT</p><h2>La oss snakke.<br /><a href="mailto:bendikroijem@gmail.com">Send e-post.</a></h2></div><div class="footer-bottom"><span>© 2026 BENDIK STRØMME RØIJEM</span><a href="https://www.linkedin.com/in/bendik-r%C3%B8ijem-2b468a253/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><button id="to-top" aria-label="Til toppen">↑</button></div></footer>
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=7"></script>
   </body>
 </html>

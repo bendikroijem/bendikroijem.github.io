@@ -58,8 +58,8 @@ portfolioToggles.forEach((toggle) => {
     });
 
     const showingReturn = view === 'return';
-    portfolioTotal.textContent = showingReturn ? '+23,93 %' : '3';
-    portfolioTotalLabel.textContent = showingReturn ? 'samlet avkastning' : 'fond';
+    portfolioTotal.textContent = showingReturn ? '+23,94 %' : '3';
+    portfolioTotalLabel.textContent = showingReturn ? 'avkastning siden kjøp' : 'fond';
     allocationChart.classList.toggle('showing-return', showingReturn);
     allocationChart.classList.remove('chart-pulse');
     requestAnimationFrame(() => allocationChart.classList.add('chart-pulse'));
