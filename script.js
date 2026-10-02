@@ -8,6 +8,17 @@ const portfolioTotal = document.querySelector('#portfolio-total');
 const portfolioTotalLabel = document.querySelector('#portfolio-total-label');
 const allocationChart = document.querySelector('.allocation-chart');
 
+const portfolioObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (!entry.isIntersecting) return;
+    allocationChart.classList.add('chart-visible');
+    portfolioObserver.disconnect();
+  },
+  { threshold: 0.35 },
+);
+
+portfolioObserver.observe(allocationChart);
+
 portfolioToggles.forEach((toggle) => {
   toggle.addEventListener('click', () => {
     const view = toggle.dataset.view;
@@ -26,5 +37,7 @@ portfolioToggles.forEach((toggle) => {
     portfolioTotal.textContent = showingReturn ? '+23,93 %' : '3';
     portfolioTotalLabel.textContent = showingReturn ? 'samlet avkastning' : 'fond';
     allocationChart.classList.toggle('showing-return', showingReturn);
+    allocationChart.classList.remove('chart-pulse');
+    requestAnimationFrame(() => allocationChart.classList.add('chart-pulse'));
   });
 });
