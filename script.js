@@ -21,7 +21,7 @@ siteNavigation?.querySelectorAll('a').forEach((link) => {
 });
 
 const motionElements = document.querySelectorAll(
-  '.page-previews, .job-card, .education-page, .project-card, .skills, .portfolio-heading, .contact-links',
+  '.page-previews, .job-card, .education-page, .finance-projects-intro, .skills, .portfolio-heading, .contact-links',
 );
 
 motionElements.forEach((element, index) => {
